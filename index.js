@@ -11,15 +11,15 @@ app.get('/',(req, res)=>{
     })
     
 })
-io.on("connection", socket => {
-    console.log("a user connected :D");
-    socket.on("chat message", ({message , name}) => {
-        console.log({message , name});
-        io.emit("chat message", ({message,name}));
+// io.on("connection", socket => {
+//     console.log("a user connected :D");
+//     socket.on("chat message", ({message , name}) => {
+//         console.log({message , name});
+//         io.emit("chat message", ({message,name}));
         
-    });
+//     });
     
-});
+// });
 
 server.listen(port, () => console.log("server running on port:" + `${port}`));
 module.exports =  {io}
