@@ -3,7 +3,8 @@ const app = express();
 const server = require("http").createServer(app);
 const io = require("socket.io").listen(server);
 const port = process.env.PORT || 3000;
-
+const cors = require("cors")
+app.use(cors())
 app.get('/',(req, res)=>{
     res.json({
         message:"connected complate"
